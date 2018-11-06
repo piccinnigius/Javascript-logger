@@ -56,12 +56,14 @@
 // e.g.: log("Hello")   : print Hello
 //       log(123)       : print 123
 //       log()          : print a blank line
-function log(msg)
+function log(msg,mode)
 {
     if(arguments.length == 0)
-        Logger.print(""); // print a blank line
+        Logger.print("","std"); // print a blank line
+    else if(arguments.length == 1)
+        Logger.print(msg, "std");
     else
-        Logger.print(msg);
+        Logger.print(msg, mode)
 };
 
 
@@ -250,7 +252,7 @@ var Logger = (function()
         },
         ///////////////////////////////////////////////////////////////////////
         // print log message to logDiv
-        print: function(msg)
+        print: function(msg, mode)
         {
             // ignore message if it is disabled
             if(!enabled)
@@ -314,8 +316,11 @@ var Logger = (function()
                 var msgDiv = document.createElement("div");
                 msgDiv.setAttribute("style", "word-wrap:break-word;" +  // wrap msg
                                              "margin-left:6.0em;");     // margin-left = 9 * ?
-                if(!msgDefined)
-                    msgDiv.style.color = "#afa"; // override color if msg is not defined
+                if(mode != "std")
+                    msgDiv.style.color = mode;
+                
+                // if(!msgDefined)
+                //    msgDiv.style.color = "#afa"; // override color if msg is not defined
 
                 // put message into a text node
                 var line = lines[i].replace(/ /g, "\u00a0");
