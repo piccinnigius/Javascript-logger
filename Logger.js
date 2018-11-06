@@ -15,8 +15,10 @@
 // e.g.: log("Hello") : print Hello
 //       log(123)     : print 123
 //       log()        : print a blank line
+//      log("hello","css-color") css-color is optional on all examples
 //
 // History:
+//          PiccinniGius 1.17 Added foreground color to log
 //          1.17: Print array elements for "Array" object.
 //                Print "object" for Object, and "function" for Function type.
 //          1.16: Removed vendor-specific border radius CSS.
@@ -47,6 +49,7 @@
 // UPDATED: 2018-01-19
 //
 // Copyright 2011. Song Ho Ahn
+// Forked: https://github.com/piccinnigius/ on 2018-11-06
 ///////////////////////////////////////////////////////////////////////////////
 
 
@@ -76,7 +79,7 @@ var Logger = (function()
     ///////////////////////////////////////////////////////////////////////////
     // private members
     ///////////////////////////////////////////////////////////////////////////
-    var version = "1.17";
+    var version = "PiccinniGius 1.17";
     var containerDiv = null;
     var tabDiv = null;
     var logDiv = null;
