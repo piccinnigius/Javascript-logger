@@ -191,7 +191,7 @@ var Logger = (function()
                                              "border:1px solid #aaa; " +
                                              "border-bottom:none; " +
                                              /*"background:#333; " + */
-                                             "background:rgba(0,0,0,0.8); " +
+                                             "background:rgba(0,0,0, 0.8); " +
                                              "border-top-right-radius:8px; " +
                                              "border-top-left-radius:8px; ");
                 // add mouse event handlers
@@ -225,8 +225,9 @@ var Logger = (function()
                                              "bottom:0px; " +
                                              "margin:0px; " +
                                              "padding:5px; " +
+                                             "resize:vertical; " +
                                              /*"background:#333; " + */
-                                             "background:rgba(0, 0, 0, 0.8); " +
+                                             "background:rgba(0, 0, 0, 0.85); " +
                                              "border-top:1px solid #aaa; ");
 
                 // style for log message
